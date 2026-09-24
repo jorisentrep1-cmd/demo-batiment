@@ -4,309 +4,263 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Maçonnerie Vallade — Maçon à Cavignac</title>
-<meta name="description" content="Maçonnerie traditionnelle, pierre de taille et enduits à la chaux autour de Cavignac. Le registre des chantiers récents, ce que je fais et ce que je ne fais pas."/>
+<meta name="description" content="Maçonnerie traditionnelle, pierre de taille et enduits à la chaux autour de Cavignac. Les chantiers de l'année, et la date de début tenue."/>
 <meta name="robots" content="noindex,nofollow"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script>try{var t=localStorage.getItem("ns-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
 /* ---------------------------------------------------------------
-   Le registre des chantiers tient toute la page : chaque chantier
-   occupe une bande pleine largeur, photo d'un cote, ligne de
-   registre de l'autre, en alternance. Colonnes larges, titres en
-   condense, filets fins -- l'allure d'un carnet de chantier.
+   C'est le travail qui fait le site. Une photo pleine page en
+   ouverture, puis les chantiers les uns apres les autres en grand,
+   et le strict minimum de prose autour. Releve sur les sites
+   d'entreprises du batiment les mieux notes : 27 a 280 mots, et
+   plus de la moitie de la surface occupee par des photos.
    --------------------------------------------------------------- */
 :root{
-  --pierre:#E6E1D6;
-  --craie:#F6F3ED;
-  --encre:#1C201C;
-  --encre-doux:#3D423B;
-  --mortier:#5C5648;
-  --trait:#CFC8B9;
-  --rouille:#8F4620;
-  --rouille-clair:#B25A2A;
-  --sur-encre:#EDE9DF;
-  --sur-encre-doux:#B3AC9C;
-  --sur-encre-accent:#D98A55;
-  --focus:#8F4620;
+  --papier:#F7F5F1;
+  --papier2:#EEEAE3;
+  --encre:#16140F;
+  --encre-doux:#4A4640;
+  --pierre:#6F675C;
+  --trait:#DCD6CC;
+  --sur-photo:#FFFFFF;
+  --sur-photo-doux:#EFEBE4;
+  --voile-haut:rgba(22,20,15,.72);
+  --voile-bas:linear-gradient(to top,rgba(22,20,15,.88),rgba(22,20,15,.70));
+  --focus:#8A6A3E;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --pierre:#1C201C;
-    --craie:#242822;
-    --encre:#EDE9DF;
-    --encre-doux:#D0CBBF;
-    --mortier:#9C9585;
-    --trait:#383C33;
-    --rouille:#D98A55;
-    --rouille-clair:#E8A472;
-    --sur-encre:#242822;
-    --sur-encre-doux:#565044;
-    --sur-encre-accent:#7A3A18;
-    --focus:#D98A55;
+    --papier:#16140F;
+    --papier2:#1D1A15;
+    --encre:#F2EEE7;
+    --encre-doux:#C6C0B6;
+    --pierre:#8F877B;
+    --trait:#332F28;
+    --focus:#C9A87A;
   }
 }
 :root[data-theme="dark"]{
-  --pierre:#1C201C;
-  --craie:#242822;
-  --encre:#EDE9DF;
-  --encre-doux:#D0CBBF;
-  --mortier:#9C9585;
-  --trait:#383C33;
-  --rouille:#D98A55;
-  --rouille-clair:#E8A472;
-  --sur-encre:#242822;
-  --sur-encre-doux:#565044;
-  --sur-encre-accent:#7A3A18;
-  --focus:#D98A55;
+  --papier:#16140F;
+  --papier2:#1D1A15;
+  --encre:#F2EEE7;
+  --encre-doux:#C6C0B6;
+  --pierre:#8F877B;
+  --trait:#332F28;
+  --focus:#C9A87A;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:3.6rem}
-body{background:var(--pierre);color:var(--encre-doux);font-family:'Barlow',system-ui,sans-serif;font-size:16.5px;line-height:1.58;-webkit-font-smoothing:antialiased}
-h1,h2,.cond{font-family:'Barlow Condensed',system-ui,sans-serif;color:var(--encre);font-weight:700;text-transform:uppercase;letter-spacing:.01em}
-h3{font-family:'Source Serif 4',Georgia,serif;color:var(--encre);font-weight:600}
-a{color:var(--rouille)}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+body{background:var(--papier);color:var(--encre-doux);font-family:'Archivo',system-ui,sans-serif;
+  font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.gar{font-family:'EB Garamond',Georgia,serif;color:var(--encre);font-weight:400;letter-spacing:0}
+a{color:var(--encre)}
 :focus-visible{outline:2px solid var(--focus);outline-offset:3px}
 img{max-width:100%;display:block}
-.env{max-width:1100px;margin:0 auto;padding-inline:1.5rem}
+.env{max-width:1240px;margin:0 auto;padding-inline:1.8rem}
+.etiq{font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--pierre)}
 
-.demo{background:var(--encre);color:var(--sur-encre);padding:.5rem 1rem;text-align:center;font-size:.74rem}
-.demo a{color:var(--sur-encre-accent);font-weight:600}
-.demo b{color:var(--sur-encre)}
+.demo{background:var(--encre);color:var(--papier);padding:.5rem 1rem;text-align:center;font-size:.72rem}
+.demo a{color:var(--papier);font-weight:600}
+.demo b{color:var(--papier)}
 
-.barre{position:sticky;top:0;z-index:20;background:var(--pierre);border-bottom:1px solid var(--trait)}
-.b-in{display:flex;align-items:center;gap:1.4rem;min-height:3.05rem}
-.b-marque{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em;color:var(--encre);text-decoration:none;flex-shrink:0}
-.b-liens{display:flex;gap:1.3rem;margin-left:auto}
-.b-liens a{font-family:'Barlow Condensed',sans-serif;font-size:.96rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--encre-doux);text-decoration:none;padding-block:.2rem;border-bottom:2px solid transparent}
-.b-liens a:hover{color:var(--encre);border-bottom-color:var(--rouille)}
-.b-tel{font-family:'Barlow Condensed',sans-serif;font-size:1.02rem;font-weight:700;letter-spacing:.03em;background:var(--rouille);color:var(--craie);text-decoration:none;padding:.36rem 1rem;flex-shrink:0;white-space:nowrap}
-.b-tel:hover{background:var(--encre)}
+/* --- barre, discrete : elle ne doit pas manger la photo --- */
+.barre{position:absolute;top:0;left:0;right:0;z-index:20;background:var(--voile-haut);padding-block:.85rem}
+.b-in{display:flex;align-items:center;gap:1.6rem;min-height:2.6rem}
+.b-marque{font-family:'EB Garamond',serif;font-size:1.45rem;color:var(--sur-photo);text-decoration:none;line-height:1.05;flex-shrink:0}
+.b-marque small{display:block;font-family:'Archivo',sans-serif;font-size:.56rem;font-weight:600;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--sur-photo-doux);margin-top:.2rem}
+.b-liens{display:flex;gap:1.7rem;margin-left:auto}
+.b-liens a{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--sur-photo-doux);text-decoration:none;padding-block:.3rem;border-bottom:1px solid transparent}
+.b-liens a:hover{color:var(--sur-photo);border-bottom-color:var(--sur-photo)}
+.b-tel{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sur-photo);
+  text-decoration:none;border:1px solid var(--sur-photo-doux);padding:.7rem 1.3rem;white-space:nowrap}
+.b-tel:hover{background:var(--sur-photo);color:var(--encre)}
 .b-court{display:none}
 @media(max-width:900px){.b-liens{display:none}.b-long{display:none}.b-court{display:inline}}
-
-/* --- entete en colonnes larges --- */
-.entete{padding-block:3rem 2.4rem}
-.entete .env{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:3rem}
-.titre{font-size:clamp(2.3rem,6vw,4.4rem);line-height:.94}
-.titre em{font-style:normal;color:var(--rouille)}
-.promesse{margin-top:1.4rem;max-width:56ch;font-family:'Source Serif 4',Georgia,serif;font-size:1.04rem;line-height:1.6}
-.carte{border-top:3px solid var(--encre);padding-top:.9rem;font-size:.92rem;line-height:1.75}
-.carte b{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;text-transform:uppercase;letter-spacing:.03em;color:var(--encre);display:block;line-height:1.1}
-.carte .tel{font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:700;color:var(--rouille);text-decoration:none;display:block;margin-block:.4rem .2rem;line-height:1}
-.carte span{color:var(--mortier)}
-@media(max-width:880px){.entete .env{grid-template-columns:1fr;gap:1.8rem}}
-
-/* --- le registre des chantiers, en bandes alternees --- */
-.registre{border-top:1px solid var(--trait)}
-.registre .intro{padding-block:2.2rem 1.6rem}
-.etiq{font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--rouille)}
-h2{font-size:clamp(1.7rem,3.8vw,2.7rem);line-height:1}
-.sous{margin-top:.5rem;max-width:58ch;font-size:.98rem}
-
-.chantier{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-top:1px solid var(--trait)}
-.chantier:last-of-type{border-bottom:1px solid var(--trait)}
-.ch-photo img{width:100%;height:clamp(200px,22vw,290px);object-fit:cover}
-.ch-texte{padding:1.8rem clamp(1.5rem,5vw,4rem);display:flex;flex-direction:column;justify-content:center}
-.chantier:nth-of-type(even) .ch-photo{order:2}
-.ch-date{font-family:'Barlow Condensed',sans-serif;font-size:.94rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--rouille)}
-.ch-quoi{font-family:'Source Serif 4',Georgia,serif;font-size:clamp(1.15rem,2.1vw,1.45rem);font-weight:600;color:var(--encre);line-height:1.25;margin-top:.35rem}
-.ch-ou{margin-top:.7rem;padding-top:.6rem;border-top:1px solid var(--trait);display:flex;flex-wrap:wrap;gap:.2rem 1.5rem;
-  font-family:'Barlow Condensed',sans-serif;font-size:1.02rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--mortier)}
-.ch-ou b{color:var(--encre);font-weight:700}
-.registre .pied{padding-block:1.3rem 2.6rem}
-.registre .pied p{font-size:.95rem;color:var(--mortier);max-width:66ch}
-@media(max-width:780px){
-  .chantier{grid-template-columns:1fr}
-  .chantier:nth-of-type(even) .ch-photo{order:0}
-  .ch-photo img{height:clamp(170px,42vw,230px)}
-  .ch-texte{padding:1.4rem 1.5rem 1.7rem}
+@media(max-width:560px){
+  .env{padding-inline:1.2rem}
+  .b-in{gap:.7rem}
+  .b-marque{font-size:1.18rem}
+  .b-marque small{letter-spacing:.22em}
+  .b-tel{padding:.6rem .95rem;font-size:.68rem;margin-left:auto}
+  .b-theme{width:1.9rem;height:1.9rem}
 }
 
-/* --- bande pierre --- */
-.bandeau{position:relative;background:var(--encre)}
-.bandeau img{width:100%;height:clamp(170px,22vw,280px);object-fit:cover}
-.bandeau figcaption{position:absolute;left:0;bottom:0;background:var(--encre);color:var(--sur-encre-doux);
-  font-size:.85rem;padding:.6rem 1.2rem;max-width:32rem}
-@media(max-width:620px){.bandeau figcaption{position:static;max-width:none}}
+/* --- ouverture pleine page --- */
+.ouverture{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.ouverture > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ouv-txt{position:relative;z-index:2;width:100%;padding-block:4.5rem 5rem;background:var(--voile-bas)}
+.ouv-txt .etiq{color:var(--sur-photo-doux)}
+.ouverture h1{font-size:clamp(2.2rem,5.2vw,3.7rem);line-height:1.12;color:var(--sur-photo);
+  max-width:20ch;margin-top:1.1rem;font-weight:400}
+.ouverture h1 em{font-style:italic}
+.ouv-pied{display:flex;flex-wrap:wrap;gap:.4rem 2.6rem;margin-top:2.2rem;padding-top:1.3rem;
+  border-top:1px solid rgba(255,255,255,.28);font-size:.82rem;color:var(--sur-photo-doux)}
+.ouv-pied b{color:var(--sur-photo);font-weight:600}
+@media(max-width:700px){.ouverture{min-height:88svh}.ouv-txt{padding-bottom:3.4rem}}
 
-/* --- cadrage : ce que je fais, ce que je ne fais pas --- */
-.cadrage{padding-block:2.8rem;background:var(--craie);border-block:1px solid var(--trait)}
-.listes{margin-top:1.6rem;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,3fr);gap:2.6rem}
-.listes h3{font-size:1.16rem}
-.listes ul{list-style:none;margin-top:.7rem}
-.listes li{padding-left:1.3rem;position:relative;margin-bottom:.4rem;font-size:.96rem}
-.listes li::before{content:'';position:absolute;left:0;top:.62em;width:.68rem;height:2px;background:var(--rouille)}
-.listes .non li{color:var(--mortier)}
-.listes .non li::before{background:var(--mortier)}
-.listes .vignette img{width:100%;height:100%;object-fit:cover}
-.renvoi{margin-top:1.5rem;border-left:3px solid var(--rouille);padding:.8rem 1.1rem;background:var(--pierre);font-size:.96rem;max-width:74ch}
-@media(max-width:900px){.listes{grid-template-columns:1fr 1fr;gap:2rem}.listes .vignette{grid-column:span 2}.listes .vignette img{height:clamp(160px,28vw,220px)}}
-@media(max-width:600px){.listes{grid-template-columns:1fr}.listes .vignette{grid-column:auto}}
+/* --- les chantiers : c'est le corps du site --- */
+.chantiers{padding-block:5rem 2rem}
+.chantiers .tete{max-width:46ch}
+.chantiers h2{font-size:clamp(1.9rem,3.4vw,2.7rem);line-height:1.12;margin-top:.8rem}
+.chantiers .tete p{margin-top:.9rem}
 
-/* --- deroule en trois colonnes larges --- */
-.deroule{padding-block:2.8rem}
-.marches{margin-top:1.7rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.4rem}
-.marche{border-top:3px solid var(--encre);padding-top:.9rem}
-.m-num{font-family:'Barlow Condensed',sans-serif;font-size:2.6rem;font-weight:700;color:var(--rouille);line-height:.8}
-.m-titre{font-family:'Source Serif 4',Georgia,serif;font-size:1.2rem;font-weight:600;color:var(--encre);margin-top:.5rem}
-.m-txt{font-size:.95rem;margin-top:.4rem}
-.m-cond{margin-top:.8rem;padding-top:.6rem;border-top:1px solid var(--trait);
-  font-family:'Barlow Condensed',sans-serif;font-size:.98rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mortier)}
-@media(max-width:820px){.marches{grid-template-columns:1fr;gap:1.6rem}}
+.ch{margin-top:4.5rem}
+.ch-img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.ch-pied{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.6rem 2.5rem;align-items:baseline;
+  margin-top:1.1rem;padding-top:1rem;border-top:1px solid var(--trait)}
+.ch-nom{font-family:'EB Garamond',serif;font-size:clamp(1.3rem,2.2vw,1.75rem);color:var(--encre);line-height:1.2}
+.ch-lieu{font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--pierre);white-space:nowrap}
+/* en grand ecran, une entree sur deux se decale pour casser la colonne */
+@media(min-width:1000px){
+  .ch{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:0 3rem;align-items:end}
+  .ch-img{aspect-ratio:3/2}
+  .ch-pied{grid-template-columns:1fr;margin-top:0;border-top:0;padding-top:0}
+  .ch-lieu{margin-top:.5rem}
+  /* une entree sur deux s'inverse : on echange les colonnes, pas l'ordre
+     des items -- sinon la photo atterrit dans la colonne etroite. */
+  .ch:nth-child(even){grid-template-columns:minmax(0,4fr) minmax(0,8fr)}
+  .ch:nth-child(even) .ch-img{grid-column:2;grid-row:1}
+  .ch:nth-child(even) .ch-pied{grid-column:1;grid-row:1;text-align:right}
+}
 
-/* --- questions --- */
-.questions{padding-block:2.8rem;background:var(--craie);border-block:1px solid var(--trait)}
-.qgrille{margin-top:1.4rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 3rem}
-.qa dt{font-family:'Source Serif 4',Georgia,serif;font-size:1.1rem;font-weight:600;color:var(--encre)}
-.qa dd{margin-top:.25rem;font-size:.95rem}
-@media(max-width:760px){.qgrille{grid-template-columns:1fr;gap:1.3rem}}
+/* --- la promesse : le seul vrai bloc de texte --- */
+.promesse{background:var(--papier2);border-block:1px solid var(--trait);padding-block:5rem;margin-top:5rem}
+.promesse .env{max-width:840px}
+.promesse p{font-family:'EB Garamond',serif;font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.38;color:var(--encre)}
+.promesse .apres{font-family:'Archivo',sans-serif;font-size:.97rem;color:var(--encre-doux);margin-top:1.6rem;max-width:62ch}
 
-/* --- bande finale --- */
-.finale{background:var(--encre);color:var(--sur-encre);padding-block:2.9rem}
-.finale h2,.finale .c-tel{color:var(--sur-encre)}
-.finale .etiq{color:var(--sur-encre-accent)}
-.f-grille{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:2.6rem;align-items:start}
-.note b{font-family:'Barlow Condensed',sans-serif;font-size:3.6rem;font-weight:700;color:var(--sur-encre);line-height:.8;display:block}
-.note .et{color:var(--sur-encre-accent);letter-spacing:.14em;margin-top:.35rem}
-.note span{display:block;font-family:'Barlow Condensed',sans-serif;font-size:.86rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sur-encre-doux);margin-top:.4rem}
-.c-tel{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:700;text-decoration:none;line-height:1;display:inline-block;margin-top:.4rem}
-.c-tel:hover{color:var(--sur-encre-accent)}
-.c-note{margin-top:.6rem;color:var(--sur-encre-doux);font-size:.93rem;max-width:36ch}
-.coord{font-size:.92rem;color:var(--sur-encre-doux)}
-.coord div{padding-block:.32rem;border-bottom:1px solid var(--sur-encre-doux)}
-.coord div:last-child{border-bottom:0}
-.coord b{color:var(--sur-encre);font-weight:600}
-.coord a{color:var(--sur-encre-accent)}
-@media(max-width:900px){.f-grille{grid-template-columns:1fr;gap:1.7rem}}
+/* --- cadrage, compact --- */
+.cadrage{padding-block:4.5rem}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:2rem}
+.deux h3{font-family:'EB Garamond',serif;font-size:1.35rem;color:var(--encre)}
+.deux ul{list-style:none;margin-top:.9rem}
+.deux li{padding-block:.5rem;border-bottom:1px solid var(--trait);font-size:.95rem}
+.deux .non li{color:var(--pierre)}
+@media(max-width:760px){.deux{grid-template-columns:1fr;gap:2.2rem}}
 
-footer{background:var(--encre);color:var(--sur-encre-doux);font-size:.77rem;padding-block:1.4rem 2rem;border-top:1px solid var(--sur-encre-doux)}
-footer a{color:var(--sur-encre-accent)}
+/* --- contact sur photo --- */
+.contact{position:relative;overflow:hidden}
+.contact > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.c-voile{position:relative;z-index:2;background:rgba(22,20,15,.80);padding-block:6rem}
+.contact .env{text-align:center}
+.contact .etiq{color:var(--sur-photo-doux)}
+.c-tel{display:inline-block;font-family:'EB Garamond',serif;font-size:clamp(2.2rem,4.6vw,3.2rem);
+  color:var(--sur-photo);text-decoration:none;margin-top:1rem;line-height:1}
+.c-tel:hover{opacity:.78}
+.c-note{color:var(--sur-photo-doux);font-size:.95rem;margin-top:1rem;max-width:44ch;margin-inline:auto}
+.c-bas{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.28);
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 2.4rem;font-size:.82rem;color:var(--sur-photo-doux)}
+.c-bas b{color:var(--sur-photo);font-weight:600}
 
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+footer{background:var(--papier);color:var(--pierre);font-size:.76rem;padding-block:2rem 2.4rem;text-align:center}
+footer a{color:var(--encre)}
 
-/* --- bascule clair / sombre --- */
-.b-theme{display:inline-flex;align-items:center;justify-content:center;
-  width:2rem;height:2rem;padding:0;flex-shrink:0;cursor:pointer;
-  background:none;color:inherit;border:1px solid currentColor;border-radius:99px;opacity:.55}
-.b-theme:hover{opacity:1}
-@media(max-width:900px){.b-theme{margin-left:auto}.b-theme + .b-tel{margin-left:.5rem}}
+.b-theme{display:inline-flex;align-items:center;justify-content:center;width:2.1rem;height:2.1rem;padding:0;
+  flex-shrink:0;cursor:pointer;background:none;color:var(--sur-photo-doux);border:1px solid currentColor;border-radius:99px;opacity:.85}
+.b-theme:hover{opacity:1;color:var(--sur-photo)}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 
 <div class="demo"><b>Exemple</b> — site de démonstration réalisé par NovaSpot · <a href="https://novaspot.fr" target="_blank" rel="noopener">novaspot.fr</a></div>
 
-<nav class="barre" aria-label="Accès rapide">
-  <div class="env b-in">
-    <a class="b-marque" href="#haut">Vallade</a>
-    <div class="b-liens">
-      <a href="#chantiers">Chantiers</a>
-      <a href="#cadrage">Ce que je fais</a>
-      <a href="#deroule">Déroulé</a>
-      <a href="#questions">Questions</a>
+<header class="ouverture" id="haut">
+  <img src="/img/f-maison.jpg" alt="Maison en pierre restaurée, façade sud" width="1500" height="1000" fetchpriority="high"/>
+  <nav class="barre" aria-label="Accès rapide">
+    <div class="env b-in">
+      <a class="b-marque" href="#haut">Maçonnerie Vallade<small>Cavignac</small></a>
+      <div class="b-liens">
+        <a href="#chantiers">Chantiers</a>
+        <a href="#cadrage">Ce que je fais</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
+      <a class="b-tel" href="tel:+33557000000"><span class="b-long">05 57 00 00 00</span><span class="b-court">Appeler</span></a>
     </div>
-    <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
-    <a class="b-tel" href="tel:+33557000000"><span class="b-long">05 57 00 00 00</span><span class="b-court">Appeler</span></a>
-  </div>
-</nav>
-
-<header class="entete" id="haut">
-  <div class="env">
-    <div>
-      <h1 class="titre">La date de début est écrite sur le devis, <em>et je la tiens.</em></h1>
-      <p class="promesse">Depuis 2009, j'ai dû la repousser trois fois : un hiver trop pluvieux, une livraison de tuiles en retard, un arrêt maladie. Les trois fois, les clients ont été prévenus quinze jours avant. C'est la seule promesse que je fais par écrit, parce que c'est celle qu'on ne me tenait jamais quand j'étais de l'autre côté.</p>
-    </div>
-    <div class="carte">
-      <b>Maçonnerie Vallade</b>
-      <a class="tel" href="tel:+33557000000">05 57 00 00 00</a>
-      <span>du lundi au vendredi, 7 h 30 – 17 h</span><br/>
-      Maçonnerie traditionnelle · Pierre de taille · Enduits à la chaux · Rénovation de granges<br/>
-      <span>Cavignac et 25 km autour · depuis 2009</span>
+  </nav>
+  <div class="ouv-txt">
+    <div class="env">
+      <div class="etiq">Maçonnerie traditionnelle · Pierre de taille · Enduits à la chaux</div>
+      <h1>Ce que je construis tient <em>plus longtemps que moi.</em></h1>
+      <div class="ouv-pied">
+        <span><b>Cavignac</b> et 25 km autour</span>
+        <span>Depuis 2009</span>
+        <span><b>4,8</b> ★★★★★ · 24 avis Google</span>
+      </div>
     </div>
   </div>
 </header>
 
-<section class="registre" id="chantiers">
-  <div class="env intro">
-    <span class="etiq">Chantiers récents</span>
-    <h2>Ce que j'ai fait cette année</h2>
-    <p class="sous">Vous connaissez probablement quelqu'un dans ces communes. Demandez — c'est la meilleure référence que je puisse donner.</p>
-  </div>
-
-  <article class="chantier">
-    <div class="ch-photo"><img src="/img/unsplash-photo-1787459608069-c2f1f9a9bc0b.jpg" alt="Échafaudage sur une bâtisse en pierre"/></div>
-    <div class="ch-texte">
-      <div class="ch-date">Mars 2026</div>
-      <div class="ch-quoi">Réfection de toiture, 90 m², tuiles canal d'origine reposées</div>
-      <div class="ch-ou"><b>Cars</b><span>3 semaines</span></div>
+<section class="chantiers" id="chantiers">
+  <div class="env">
+    <div class="tete">
+      <div class="etiq">Chantiers récents</div>
+      <h2>Cette année</h2>
+      <p>Vous connaissez probablement quelqu'un dans ces communes. Demandez — c'est la meilleure référence que je puisse donner.</p>
     </div>
-  </article>
 
-  <article class="chantier">
-    <div class="ch-photo"><img src="/img/unsplash-photo-1653280679689-078c04c417a1.jpg" alt="Chantier de gros œuvre"/></div>
-    <div class="ch-texte">
-      <div class="ch-date">Février 2026</div>
-      <div class="ch-quoi">Ouverture d'un mur porteur, pose d'un IPN de 3,20 m</div>
-      <div class="ch-ou"><b>Saint-Savin</b><span>4 jours</span></div>
-    </div>
-  </article>
+    <article class="ch">
+      <img class="ch-img" src="/img/f-cheminee.jpg" alt="Séjour d'une grange transformée, cheminée en pierre remontée" width="1500" height="1000" loading="lazy" decoding="async"/>
+      <div class="ch-pied">
+        <div class="ch-nom">Grange transformée en habitation</div>
+        <div class="ch-lieu">Berson · 5 mois</div>
+      </div>
+    </article>
 
-  <article class="chantier">
-    <div class="ch-photo"><img src="/img/unsplash-photo-1489514354504-1653aa90e34e.jpg" alt="Maçon au travail sur un mur en hauteur"/></div>
-    <div class="ch-texte">
-      <div class="ch-date">Octobre 2025 – février 2026</div>
-      <div class="ch-quoi">Grange transformée en habitation : dalle, ouvertures, enduits intérieurs</div>
-      <div class="ch-ou"><b>Berson</b><span>5 mois</span></div>
-    </div>
-  </article>
+    <article class="ch">
+      <img class="ch-img" src="/img/f-muret.jpg" alt="Muret de clôture en pierre de taille bordant une terrasse" width="1500" height="1000" loading="lazy" decoding="async"/>
+      <div class="ch-pied">
+        <div class="ch-nom">Muret de clôture, 18 mètres en pierre de taille</div>
+        <div class="ch-lieu">Cavignac · 2 semaines</div>
+      </div>
+    </article>
 
-  <article class="chantier">
-    <div class="ch-photo"><img src="/img/unsplash-photo-1701850009190-2859ba2aeea6.jpg" alt="Pose d'un bloc de pierre au mortier"/></div>
-    <div class="ch-texte">
-      <div class="ch-date">Novembre 2025</div>
-      <div class="ch-quoi">Muret de clôture en pierre de taille, 18 mètres linéaires</div>
-      <div class="ch-ou"><b>Cavignac</b><span>2 semaines</span></div>
-    </div>
-  </article>
+    <article class="ch">
+      <img class="ch-img" src="/img/f-ferme.jpg" alt="Façade en pierre après reprise de fissures et enduit à la chaux" width="1500" height="1000" loading="lazy" decoding="async"/>
+      <div class="ch-pied">
+        <div class="ch-nom">Reprise de fissures et enduit à la chaux, façade sud</div>
+        <div class="ch-lieu">Pugnac · 9 jours</div>
+      </div>
+    </article>
 
-  <article class="chantier">
-    <div class="ch-photo"><img src="/img/unsplash-photo-1731168273756-e02cae42265b.jpg" alt="Application d'un enduit à la chaux"/></div>
-    <div class="ch-texte">
-      <div class="ch-date">Septembre 2025</div>
-      <div class="ch-quoi">Reprise de fissures et enduit à la chaux sur façade sud</div>
-      <div class="ch-ou"><b>Pugnac</b><span>9 jours</span></div>
-    </div>
-  </article>
 
-  <div class="env pied">
-    <p>Je mets cette liste à jour chaque mois. Les chantiers plus anciens, je les montre sur place — j'ai les photos sur le téléphone.</p>
+    <article class="ch">
+      <img class="ch-img" src="/img/f-marches.jpg" alt="Escalier extérieur en pierre dans un jardin" width="1500" height="1000" loading="lazy" decoding="async"/>
+      <div class="ch-pied">
+        <div class="ch-nom">Escalier extérieur et réfection de toiture, 90 m²</div>
+        <div class="ch-lieu">Cars · 3 semaines</div>
+      </div>
+    </article>
   </div>
 </section>
 
-<figure class="bandeau">
-  <img src="/img/unsplash-photo-1759680190925-7da75478baaa.jpg" alt="Mur en pierre appareillée au mortier"/>
-  <figcaption>Muret en pierre de taille, Cavignac — novembre 2025.</figcaption>
-</figure>
+<section class="promesse">
+  <div class="env">
+    <p>La date de début est écrite sur le devis, <em>et je la tiens.</em></p>
+    <p class="apres">Depuis 2009, j'ai dû la repousser trois fois : un hiver trop pluvieux, une livraison de tuiles en retard, un arrêt maladie. Les trois fois, les clients ont été prévenus quinze jours avant. C'est la seule promesse que je fais par écrit, parce que c'est celle qu'on ne me tenait jamais quand j'étais de l'autre côté.</p>
+  </div>
+</section>
 
 <section class="cadrage" id="cadrage">
   <div class="env">
-    <span class="etiq">Cadrage</span>
-    <h2>Ce que je fais, et ce que je ne fais pas</h2>
-    <p class="sous">Mieux vaut le savoir avant de m'appeler que de perdre une visite pour rien.</p>
-
-    <div class="listes">
+    <div class="etiq">Cadrage</div>
+    <div class="deux">
       <div>
         <h3>Je fais</h3>
         <ul>
           <li>Maçonnerie traditionnelle et pierre de taille</li>
           <li>Enduits à la chaux, reprise de fissures</li>
-          <li>Ouvertures : portes, fenêtres, pose d'IPN</li>
+          <li>Ouvertures, pose d'IPN</li>
           <li>Dalles, chapes, terrasses</li>
-          <li>Murets, clôtures, escaliers extérieurs</li>
-          <li>Réfection de toiture et zinguerie</li>
+          <li>Murets, escaliers extérieurs</li>
           <li>Rénovation de granges et de bâtiments anciens</li>
         </ul>
       </div>
@@ -316,90 +270,26 @@ footer a{color:var(--sur-encre-accent)}
           <li>Les piscines</li>
           <li>La charpente neuve</li>
           <li>L'électricité et la plomberie</li>
-          <li>Les chantiers à plus de 25 km de Cavignac</li>
+          <li>Les chantiers à plus de 25 km</li>
           <li>Les devis par téléphone, sans être venu voir</li>
         </ul>
       </div>
-      <div class="vignette">
-        <img src="/img/unsplash-photo-1704005445445-2747074be8ac.jpg" alt="Truelle chargée de mortier"/>
-      </div>
-    </div>
-    <p class="renvoi">Pour l'électricité et la plomberie, je travaille depuis des années avec deux artisans du secteur. Je vous donne leurs numéros, je ne prends rien au passage.</p>
-  </div>
-</section>
-
-<section class="deroule" id="deroule">
-  <div class="env">
-    <span class="etiq">Déroulé</span>
-    <h2>Comment ça se passe</h2>
-    <div class="marches">
-      <div class="marche">
-        <div class="m-num">1</div>
-        <div class="m-titre">La visite</div>
-        <p class="m-txt">Je viens sur place, je regarde, je mesure, je vous dis ce que je ferais et pourquoi. Si le chantier n'est pas pour moi, je vous le dis à ce moment-là.</p>
-        <div class="m-cond">Gratuite · 30 à 45 minutes</div>
-      </div>
-      <div class="marche">
-        <div class="m-num">2</div>
-        <div class="m-titre">Le devis</div>
-        <p class="m-txt">Détaillé poste par poste, avec les quantités et la date de début. Pas de « divers » ni de « forfait ». L'attestation de décennale est jointe, vous n'avez pas à la demander.</p>
-        <div class="m-cond">Sous 5 jours ouvrés · valable 3 mois</div>
-      </div>
-      <div class="marche">
-        <div class="m-num">3</div>
-        <div class="m-titre">Le chantier</div>
-        <p class="m-txt">Je préviens la veille de chaque intervention. Vous avez mon portable, pas un standard. Le soir, la zone est balayée : ce n'est pas à vous de ramasser.</p>
-        <div class="m-cond">Acompte 30 % · solde à la réception</div>
-      </div>
     </div>
   </div>
 </section>
 
-<section class="questions" id="questions">
+<section class="contact" id="contact">
+  <img src="/img/f-cour.jpg" alt="Cour d'une ferme en pierre" width="1500" height="1000" loading="lazy" decoding="async"/>
+  <div class="c-voile">
   <div class="env">
-    <span class="etiq">Questions</span>
-    <h2>Ce qu'on me demande au téléphone</h2>
-    <dl class="qgrille">
-      <div class="qa">
-        <dt>« Et si ça dépasse le devis ? »</dt>
-        <dd>Un avenant signé avant, ou ce n'est pas facturé. C'est arrivé quatre fois depuis 2009, toujours parce qu'on a trouvé quelque chose en ouvrant un mur.</dd>
-      </div>
-      <div class="qa">
-        <dt>« Vous prenez combien d'acompte ? »</dt>
-        <dd>30 % à la signature, le solde à la réception des travaux. Rien entre les deux, même sur un chantier de cinq mois.</dd>
-      </div>
-      <div class="qa">
-        <dt>« Vous travaillez le samedi ? »</dt>
-        <dd>Non. Sauf urgence — une toiture ouverte ou une infiltration, je me déplace le jour même, week-end compris.</dd>
-      </div>
-      <div class="qa">
-        <dt>« Combien de temps d'attente ? »</dt>
-        <dd>En ce moment, six à huit semaines. Pour les petits chantiers de moins d'une semaine, je cale souvent plus tôt entre deux gros.</dd>
-      </div>
-    </dl>
-  </div>
-</section>
-
-<section class="finale" id="contact">
-  <div class="env">
-    <div class="f-grille">
-      <div class="note">
-        <b>4,8</b>
-        <div class="et">★★★★★</div>
-        <span>24 avis Google</span>
-      </div>
-      <div>
-        <span class="etiq">Contact</span>
-        <a class="c-tel" href="tel:+33557000000">05 57 00 00 00</a>
-        <p class="c-note">Je suis sur les chantiers de 7 h 30 à 17 h. Si je ne décroche pas, laissez un message : je rappelle le soir, toujours le jour même.</p>
-      </div>
-      <div class="coord">
-        <div><b>Maçonnerie Vallade</b> — 12 avenue de Paris, 33620 Cavignac</div>
-        <div><a href="mailto:contact@maconnerie-vallade.fr">contact@maconnerie-vallade.fr</a></div>
-        <div>Cavignac, Saint-Savin, Cars, Berson, Pugnac, Blaye, Saint-André-de-Cubzac et les communes entre</div>
-        <div>Garantie décennale et responsabilité civile professionnelle</div>
-      </div>
+    <div class="etiq">Contact</div>
+    <a class="c-tel" href="tel:+33557000000">05 57 00 00 00</a>
+    <p class="c-note">Je suis sur les chantiers de 7 h 30 à 17 h. Laissez un message, je rappelle le soir même.</p>
+    <div class="c-bas">
+      <span><b>Maçonnerie Vallade</b> — 12 avenue de Paris, 33620 Cavignac</span>
+      <span>Garantie décennale et RC professionnelle</span>
     </div>
+  </div>
   </div>
 </section>
 
@@ -409,7 +299,6 @@ footer a{color:var(--sur-encre-accent)}
     Site de démonstration réalisé par <a href="https://novaspot.fr" target="_blank" rel="noopener">NovaSpot</a>. Les informations et chantiers présentés sont fictifs.
   </div>
 </footer>
-
 
 <script>
 (function(){
