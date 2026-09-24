@@ -135,6 +135,25 @@ img{max-width:100%;display:block}
 .promesse p{font-family:'EB Garamond',serif;font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.38;color:var(--encre)}
 .promesse .apres{font-family:'Archivo',sans-serif;font-size:.97rem;color:var(--encre-doux);margin-top:1.6rem;max-width:62ch}
 
+/* --- les avis : c'est la destination du QR code imprime sur les
+       cartons et les factures. Le client scanne, il atterrit ici, et
+       il choisit. Le lien Google est offert a tout le monde -- on ne
+       filtre pas les mecontents, on leur donne juste un second
+       chemin, plus direct. --- */
+.avis{background:var(--papier2);border-block:1px solid var(--trait);padding-block:4.5rem}
+.avis .env{display:grid;grid-template-columns:auto minmax(0,1fr);gap:3.5rem;align-items:center}
+.note b{display:block;font-family:'EB Garamond',serif;font-size:4.2rem;color:var(--encre);line-height:.85}
+.note .et{color:var(--encre);letter-spacing:.16em;font-size:1rem;margin-top:.5rem}
+.note span{display:block;font-size:.66rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--pierre);margin-top:.5rem}
+.avis h2{font-size:clamp(1.5rem,2.6vw,2.05rem);line-height:1.15}
+.avis p{margin-top:.7rem;max-width:56ch;font-size:.95rem}
+.chemins{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.chemin{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  padding:.85rem 1.4rem;border:1px solid var(--encre);color:var(--encre)}
+.chemin.plein{background:var(--encre);color:var(--papier)}
+.chemin:hover{opacity:.78}
+@media(max-width:760px){.avis .env{grid-template-columns:1fr;gap:1.8rem}}
+
 /* --- cadrage, compact --- */
 .cadrage{padding-block:4.5rem}
 .deux{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:2rem}
@@ -179,6 +198,7 @@ footer a{color:var(--encre)}
       <a class="b-marque" href="#haut">Maçonnerie Vallade<small>Cavignac</small></a>
       <div class="b-liens">
         <a href="#chantiers">Chantiers</a>
+        <a href="#avis">Avis</a>
         <a href="#cadrage">Ce que je fais</a>
         <a href="#contact">Contact</a>
       </div>
@@ -246,6 +266,25 @@ footer a{color:var(--encre)}
   <div class="env">
     <p>La date de début est écrite sur le devis, <em>et je la tiens.</em></p>
     <p class="apres">Depuis 2009, j'ai dû la repousser trois fois : un hiver trop pluvieux, une livraison de tuiles en retard, un arrêt maladie. Les trois fois, les clients ont été prévenus quinze jours avant. C'est la seule promesse que je fais par écrit, parce que c'est celle qu'on ne me tenait jamais quand j'étais de l'autre côté.</p>
+  </div>
+</section>
+
+<section class="avis" id="avis">
+  <div class="env">
+    <div class="note">
+      <b>4,8</b>
+      <div class="et">★★★★★</div>
+      <span>24 avis Google</span>
+    </div>
+    <div>
+      <div class="etiq">Votre avis</div>
+      <h2>Vous sortez d'un chantier ?</h2>
+      <p>Un carton avec un QR code est laissé à la fin. Il mène ici. Si tout s'est bien passé, deux lignes sur Google aident le prochain à choisir. Si quelque chose n'a pas été, dites-le-moi directement — je préfère le réparer que le lire en ligne.</p>
+      <div class="chemins">
+        <a class="chemin plein" href="https://search.google.com/local/writereview?placeid=PLACE_ID_DU_CLIENT" target="_blank" rel="noopener">Laisser un avis Google</a>
+        <a class="chemin" href="tel:+33557000000">Me dire ce qui n'a pas été</a>
+      </div>
+    </div>
   </div>
 </section>
 
