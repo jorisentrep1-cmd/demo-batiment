@@ -54,8 +54,11 @@
 
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:4rem}
+/* Base de lecture : 1rem = 17 px, texte courant a 16 px. Les clients de ces
+   artisans lisent souvent sur telephone, et pas tous avec de bons yeux. */
+html{font-size:106.25%}
 body{background:var(--papier);color:var(--encre-doux);font-family:'Archivo',system-ui,sans-serif;
-  font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2,h3,.gar{font-family:'EB Garamond',Georgia,serif;color:var(--encre);font-weight:400;letter-spacing:0}
 a{color:var(--encre)}
 :focus-visible{outline:2px solid var(--focus);outline-offset:3px}
@@ -262,7 +265,7 @@ footer a{color:var(--encre)}
     </article>
 
     <article class="ch">
-      <img class="ch-img" src="/img/f-muret.jpg" alt="Muret de clôture en pierre de taille bordant une terrasse" width="1200" height="800" loading="lazy" decoding="async"/>
+      <img class="ch-img" src="/img/f-muret-pierre.jpg" alt="Muret en pierre de taille calcaire, joints à la chaux, massif de lavande au pied" width="1200" height="800" loading="lazy" decoding="async"/>
       <div class="ch-pied">
         <div class="ch-nom">Muret de clôture, 18 mètres en pierre de taille</div>
         <div class="ch-lieu">Cavignac · 2 semaines</div>
