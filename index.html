@@ -129,7 +129,7 @@ img{max-width:100%;display:block}
 .chantiers .tete p{margin-top:.9rem}
 
 .ch{margin-top:4.5rem}
-.ch-img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.ch-img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 .ch-pied{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.6rem 2.5rem;align-items:baseline;
   margin-top:1.1rem;padding-top:1rem;border-top:1px solid var(--trait)}
 .ch-nom{font-family:'EB Garamond',serif;font-size:clamp(1.3rem,2.2vw,1.75rem);color:var(--encre);line-height:1.2}
@@ -231,7 +231,7 @@ footer a{color:var(--encre)}
   </nav>
 
 <header class="ouverture" id="haut">
-  <img src="/img/f-maison.jpg" alt="Maison en pierre restaurée, façade sud" width="1500" height="1000" fetchpriority="high"/>
+  <img src="/img/f-maison.jpg" srcset="/img/f-maison-m.jpg 1000w, /img/f-maison.jpg 1500w" sizes="(max-width:700px) 330px, 100vw" alt="Maison en pierre restaurée, façade sud" width="1500" height="1000" fetchpriority="high"/>
   
   <div class="ouv-txt">
     <div class="env">
@@ -294,7 +294,7 @@ footer a{color:var(--encre)}
 <section class="promesse">
   <div class="env">
     <p>La date de début est écrite sur le devis, <em>et je la tiens.</em></p>
-    <p class="apres">Depuis 2009, j'ai dû la repousser trois fois : un hiver trop pluvieux, une livraison de tuiles en retard, un arrêt maladie. Les trois fois, les clients ont été prévenus quinze jours avant. C'est la seule promesse que je fais par écrit, parce que c'est celle qu'on ne me tenait jamais quand j'étais de l'autre côté.</p>
+    <p class="apres">Depuis 2009, j'ai dû la repousser trois fois : un hiver trop pluvieux, une livraison de tuiles en retard, un arrêt maladie. Les trois fois, les clients ont été prévenus quinze jours avant. C'est la seule promesse que je fais par écrit, parce que c'est celle qu'on ne me tenait jamais quand j'étais de l'autre côté.</p>
   </div>
 </section>
 
@@ -307,7 +307,7 @@ footer a{color:var(--encre)}
     </div>
     <div>
       <div class="etiq">Votre avis</div>
-      <h2>Vous sortez d'un chantier ?</h2>
+      <h2>Vous sortez d'un chantier ?</h2>
       <p>Un carton avec un QR code est laissé à la fin. Il mène ici. Si tout s'est bien passé, deux lignes sur Google aident le prochain à choisir. Si quelque chose n'a pas été, dites-le-moi directement — je préfère le réparer que le lire en ligne.</p>
       <div class="chemins">
         <a class="chemin plein" href="https://search.google.com/local/writereview?placeid=PLACE_ID_DU_CLIENT" target="_blank" rel="noopener">Laisser un avis Google</a>
